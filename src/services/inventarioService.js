@@ -1,0 +1,1 @@
+// Funciones para consumir las API del backend relacionadas con el inventario
