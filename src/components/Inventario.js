@@ -9,6 +9,9 @@ import ItalianosFlush from './secciones/ItalianosFlush';
 import Discapacitados from './secciones/Discapacitados';
 import BlustarEvento from './secciones/BlustarEvento';
 import BlustarObra from './secciones/BlustarObra';
+import Armal from './secciones/Armal';
+import Fibra from './secciones/Fibra';
+import Lavamanos from './secciones/Lavamanos';
 
 const Inventario = () => {
   const [inventario, setInventario] = useState([]);
@@ -64,6 +67,16 @@ const Inventario = () => {
           <Link to="/secciones/BlustarObra">
             <button onClick={() => handleCategoryChange('BlustarObra')}>BlustarObra</button>
           </Link>
+          <Link to="/secciones/Armal">
+            <button onAuxClick={() => handleCategoryChange('Armal')}>Armal</button>
+          </Link>
+          <Link to="/secciones/Fibra">
+            <button onAuxClick={() => handleCategoryChange('Fibra')}>Fibra</button>
+          </Link>
+          <Link to="/secciones/Lavamanos">
+            <button onAuxClick={() => handleCategoryChange('Lavamanos')}>Lavamanos</button>
+          </Link>
+
 
       </div>
 
@@ -75,6 +88,10 @@ const Inventario = () => {
         <Route path="/secciones/Discapacitados" element={<Discapacitados/>} />
         <Route path="/secciones/BlustarEvento" element={<BlustarEvento/>} />
         <Route path="/secciones/BlustarObra" element={<BlustarObra/>} />
+        <Route path="/secciones/Armal" element={<Armal/>} />
+        <Route path="/secciones/Fibra" element={<Fibra/>} />
+        <Route path="/secciones/Lavamanos" element={<Lavamanos/>} />
+
       </Routes>
     </div>
   );
