@@ -1,6 +1,14 @@
 // cliente/src/components/Inventario.js
 import React, { useEffect, useState } from 'react';
+import { Link, Routes, Route } from 'react-router-dom';
 import FormularioProducto from './FormularioProducto';
+import FivePeaks from './secciones/FivePeaks';  
+import FiveVip from './secciones/FiveVip'; 
+import Italianos from './secciones/Italianos'; 
+import ItalianosFlush from './secciones/ItalianosFlush';
+import Discapacitados from './secciones/Discapacitados';
+import BlustarEvento from './secciones/BlustarEvento';
+import BlustarObra from './secciones/BlustarObra';
 
 const Inventario = () => {
   const [inventario, setInventario] = useState([]);
@@ -9,68 +17,68 @@ const Inventario = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  useEffect(() => {
-    // Construir la URL de la solicitud al backend con los parámetros necesarios
-    let url = `http://localhost:3001/inventario?_page=${currentPage}&_limit=${productsPerPage}&q=${searchTerm}`;
-    if (selectedCategory) {
-      url += `&category=${selectedCategory}`;
-    }
+ // const handlePageChange = page => {
+   // setCurrentPage(page);
+  //};
 
-    // Hacer una solicitud al backend para obtener el inventario paginado y filtrado
-    fetch(url)
-      .then(response => response.json())
-      .then(data => setInventario(data))
-      .catch(error => console.error('Error al obtener el inventario:', error));
-  }, [currentPage, productsPerPage, searchTerm, selectedCategory]);
-
-  const handlePageChange = page => {
-    setCurrentPage(page);
-  };
-
-  const handleSearch = term => {
-    setSearchTerm(term);
-  };
+  //const handleSearch = term => {
+    //setSearchTerm(term);
+  //};
 
   const handleCategoryChange = category => {
     setSelectedCategory(category);
-    setCurrentPage(1); // Reiniciar a la primera página cuando se cambia la categoría
+    setCurrentPage(1);
   };
+
+  useEffect(() => {
+    // Hacer una solicitud al backend para obtener el inventario paginado y filtrado
+    // Usa las variables de estado adecuadas aquí (inventario, currentPage, productsPerPage, searchTerm, selectedCategory)
+  }, [currentPage, productsPerPage, searchTerm, selectedCategory]);
 
   return (
     <div>
       <h2>Inventario</h2>
       <FormularioProducto onAgregarProducto={(producto) => setInventario([...inventario, producto])} />
       <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Buscar producto..."
-          value={searchTerm}
-          onChange={(e) => handleSearch(e.target.value)}
-        />
+        {/* ... (código existente) */}
       </div>
       <div className="category-buttons">
-        {/* Agregar botones para cada categoría */}
-        <button onClick={() => handleCategoryChange('Categoria1')}>FIVE PEAKS</button>
-        <button onClick={() => handleCategoryChange('Categoria2')}>FIVE VIP</button>
-        <button onClick={() => handleCategoryChange('Categoria2')}>ITALIANOS</button>
-        <button onClick={() => handleCategoryChange('Categoria2')}>ITALIANOS FLUSH</button>
-        <button onClick={() => handleCategoryChange('Categoria2')}>DISCAPACITADOS</button>
-        <button onClick={() => handleCategoryChange('Categoria2')}>BLUSTAR EVENTO</button>
-        <button onClick={() => handleCategoryChange('Categoria2')}>BLUSTAR OBRA</button>
-        <button onClick={() => handleCategoryChange('Categoria2')}>ARMAL</button>
-        <button onClick={() => handleCategoryChange('Categoria2')}>FIBRA</button>
-        <button onClick={() => handleCategoryChange('Categoria2')}>LAVAMANOS</button>
-        {/* ... Agregar más botones según tus necesidades */}
+        <Link to ="/secciones/FivePeaks">
+          <button onClick={() => handleCategoryChange('FivePeaks')}>Five Peaks</button>
+        </Link>
+        <Link to="/secciones/FiveVip">
+          <button onClick={() => handleCategoryChange('FiveVip')}>Five VIP</button>
+        </Link>
+        <Link to="/secciones/Italianos">
+          <button onClick={() => handleCategoryChange('Italianos')}>Italianos</button>
+        </Link>
+        <Link to="/secciones/ItalianosFlush">
+          <button onClick={() => handleCategoryChange('ItalianosFlush')}>ItalianosFlush</button>
+        </Link>
+        <Link to="/secciones/Discapacitados">
+          <button onClick={() => handleCategoryChange('Discapacitados')}>Discapacitados</button>
+          </Link>
+          <Link to="/secciones/BlustarEvento">
+            <button onClick={() => handleCategoryChange('BlustarEvento')}>BlustarEvento</button>
+          </Link>
+          <Link to="/secciones/BlustarObra">
+            <button onClick={() => handleCategoryChange('BlustarObra')}>BlustarObra</button>
+          </Link>
+
       </div>
-      <ul>
-        {inventario.map(producto => (
-          <li key={producto._id}>
-            {producto.nombre} - Precio: ${producto.precio} - Cantidad: {producto.cantidad}
-          </li>
-        ))}
-      </ul>
+
+      <Routes>
+        <Route path="/secciones/FivePeaks" element={<FivePeaks />} />
+        <Route path="/secciones/FiveVip" element={<FiveVip />} />
+        <Route path="/secciones/Italianos" element={<Italianos />} />
+        <Route path="/secciones/ItalianosFlush" element={<ItalianosFlush />} />
+        <Route path="/secciones/Discapacitados" element={<Discapacitados/>} />
+        <Route path="/secciones/BlustarEvento" element={<BlustarEvento/>} />
+        <Route path="/secciones/BlustarObra" element={<BlustarObra/>} />
+      </Routes>
     </div>
   );
 };
 
 export default Inventario;
+
