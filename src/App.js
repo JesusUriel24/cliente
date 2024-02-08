@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Inicio from './components/Inicio';
 import Inventario from './components/Inventario';
+import Contratos from './components/Contratos'; // Importa el componente de Contratos
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Inicio />} />
+          <Route path="/contratos" element={<Contratos />} />
           <Route path="/inventario" element={<Inventario />} />
         </Routes>
       </div>

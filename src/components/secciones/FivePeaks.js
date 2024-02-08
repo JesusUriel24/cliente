@@ -1,7 +1,7 @@
 // src/components/secciones/FivePeaks.js (y otros archivos de secciones similares)
 import React from 'react';
 
-const Seccion = ({ nombre, colores }) => {
+const fivepeaks = ({ nombre, colores }) => {
   return (
     <div>
       <h1>{nombre}</h1>
@@ -27,4 +27,4 @@ const Seccion = ({ nombre, colores }) => {
   );
 };
 
-export default Seccion;
+export default fivepeaks;

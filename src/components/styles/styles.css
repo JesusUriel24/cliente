@@ -11,11 +11,40 @@
     background-color: #ff0800;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 50px;
   }
   
   .button:hover {
-    background-color: #0056b3;
+    background-color: #454949;
   }
+
+  /* cliente/src/styles/styles.css */
+
+.botones-header {
+  display: flex; /* Utiliza flexbox para alinear los botones horizontalmente */
+  justify-content: center; /* Centra los botones horizontalmente */
+  margin-top: 10px; /* Espaciado superior para los botones */
+}
+
+.botones-header ul {
+  display: flex;
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0;
+}
+
+.botones-header li {
+  margin: 0 10px; /* Espacio entre los botones */
+}
+
+.botones-header a {
+  font-size: 1.2em; /* Tamaño de fuente */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  color: black; /* Color del texto */
+}
+
+.botones-header a:hover {
+  color: gray; /* Cambia el color del texto al pasar el ratón por encima */
+}

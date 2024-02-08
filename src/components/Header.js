@@ -1,19 +1,26 @@
+// cliente/src/components/Header.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Inicio</Link>
-          </li>
-          <li>
-            <Link to="/inventario">Inventario</Link>
-          </li>
-        </ul>
-      </nav>
+      {/* Botones */}
+      <div className="botones-header">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Inicio</Link>
+            </li>
+            <li>
+              <Link to="/inventario">Inventario</Link>
+            </li>
+            <li>
+              <Link to="/contratos">Contratos</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

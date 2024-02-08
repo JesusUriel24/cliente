@@ -1,7 +1,7 @@
 // cliente/src/components/Inventario.js
 import React, { useEffect, useState } from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
-import FormularioProducto from './FormularioProducto';
+//import FormularioProducto from './FormularioProducto';
 import FivePeaks from './secciones/FivePeaks';  
 import FiveVip from './secciones/FiveVip'; 
 import Italianos from './secciones/Italianos'; 
@@ -38,11 +38,10 @@ const Inventario = () => {
     // Hacer una solicitud al backend para obtener el inventario paginado y filtrado
     // Usa las variables de estado adecuadas aquí (inventario, currentPage, productsPerPage, searchTerm, selectedCategory)
   }, [currentPage, productsPerPage, searchTerm, selectedCategory]);
-const colores = ['red', 'blue'];
   return (
     <div>
       <h2>Inventario</h2>
-      <FormularioProducto onAgregarProducto={(producto) => setInventario([...inventario, producto])} />
+
       <div className="search-bar">
         {/* ... (código existente) */}
       </div>
@@ -86,12 +85,12 @@ const colores = ['red', 'blue'];
         <Route path="/secciones/FiveVip" element={<FiveVip />} />
         <Route path="/secciones/Italianos" element={<Italianos />} />
         <Route path="/secciones/ItalianosFlush" element={<ItalianosFlush />} />
-        <Route path="/secciones/Discapacitados" element={<Discapacitados/>} />
-        <Route path="/secciones/BlustarEvento" element={<BlustarEvento/>} />
-        <Route path="/secciones/BlustarObra" element={<BlustarObra/>} />
-        <Route path="/secciones/Armal" element={<Armal/>} />
-        <Route path="/secciones/Fibra" element={<Fibra/>} />
-        <Route path="/secciones/Lavamanos" element={<Lavamanos/>} />
+        <Route path="/secciones/Discapacitados" element={<Discapacitados />} />
+        <Route path="/secciones/BlustarEvento" element={<BlustarEvento />} />
+        <Route path="/secciones/BlustarObra" element={<BlustarObra />} />
+        <Route path="/secciones/Armal" element={<Armal />} />
+        <Route path="/secciones/Fibra" element={<Fibra />} />
+        <Route path="/secciones/Lavamanos" element={<Lavamanos />} />
 
       </Routes>
     </div>
