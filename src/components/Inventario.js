@@ -12,6 +12,7 @@ import BlustarObra from './secciones/BlustarObra';
 import Armal from './secciones/Armal';
 import Fibra from './secciones/Fibra';
 import Lavamanos from './secciones/Lavamanos';
+import './styles/styles.css';
 
 const Inventario = () => {
   const [inventario, setInventario] = useState([]);
@@ -37,7 +38,7 @@ const Inventario = () => {
     // Hacer una solicitud al backend para obtener el inventario paginado y filtrado
     // Usa las variables de estado adecuadas aquí (inventario, currentPage, productsPerPage, searchTerm, selectedCategory)
   }, [currentPage, productsPerPage, searchTerm, selectedCategory]);
-
+const colores = ['red', 'blue'];
   return (
     <div>
       <h2>Inventario</h2>
@@ -47,34 +48,34 @@ const Inventario = () => {
       </div>
       <div className="category-buttons">
         <Link to ="/secciones/FivePeaks">
-          <button onClick={() => handleCategoryChange('FivePeaks')}>Five Peaks</button>
+        <button className="button" onClick={() => handleCategoryChange('FivePeaks')}>Five Peaks</button>
         </Link>
         <Link to="/secciones/FiveVip">
-          <button onClick={() => handleCategoryChange('FiveVip')}>Five VIP</button>
+          <button className="button" onClick={() => handleCategoryChange('FiveVip')}>Five VIP</button>
         </Link>
         <Link to="/secciones/Italianos">
-          <button onClick={() => handleCategoryChange('Italianos')}>Italianos</button>
+          <button className="button" onClick={() => handleCategoryChange('Italianos')}>Italianos</button>
         </Link>
         <Link to="/secciones/ItalianosFlush">
-          <button onClick={() => handleCategoryChange('ItalianosFlush')}>ItalianosFlush</button>
+          <button className="button" onClick={() => handleCategoryChange('ItalianosFlush')}>ItalianosFlush</button>
         </Link>
         <Link to="/secciones/Discapacitados">
-          <button onClick={() => handleCategoryChange('Discapacitados')}>Discapacitados</button>
+          <button className="button" onClick={() => handleCategoryChange('Discapacitados')}>Discapacitados</button>
           </Link>
           <Link to="/secciones/BlustarEvento">
-            <button onClick={() => handleCategoryChange('BlustarEvento')}>BlustarEvento</button>
+            <button className="button" onClick={() => handleCategoryChange('BlustarEvento')}>BlustarEvento</button>
           </Link>
           <Link to="/secciones/BlustarObra">
-            <button onClick={() => handleCategoryChange('BlustarObra')}>BlustarObra</button>
+            <button className="button" onClick={() => handleCategoryChange('BlustarObra')}>BlustarObra</button>
           </Link>
           <Link to="/secciones/Armal">
-            <button onAuxClick={() => handleCategoryChange('Armal')}>Armal</button>
+            <button className="button" onAuxClick={() => handleCategoryChange('Armal')}>Armal</button>
           </Link>
           <Link to="/secciones/Fibra">
-            <button onAuxClick={() => handleCategoryChange('Fibra')}>Fibra</button>
+            <button className="button" onAuxClick={() => handleCategoryChange('Fibra')}>Fibra</button>
           </Link>
           <Link to="/secciones/Lavamanos">
-            <button onAuxClick={() => handleCategoryChange('Lavamanos')}>Lavamanos</button>
+            <button className="button" onAuxClick={() => handleCategoryChange('Lavamanos')}>Lavamanos</button>
           </Link>
 
 
@@ -98,4 +99,3 @@ const Inventario = () => {
 };
 
 export default Inventario;
-
