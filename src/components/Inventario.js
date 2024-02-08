@@ -40,7 +40,7 @@ const Inventario = () => {
   }, [currentPage, productsPerPage, searchTerm, selectedCategory]);
   return (
     <div>
-      <h2>Inventario</h2>
+      <h2>INVENTARIO</h2>
 
       <div className="search-bar">
         {/* ... (código existente) */}
@@ -81,16 +81,16 @@ const Inventario = () => {
       </div>
 
       <Routes>
-        <Route path="/secciones/FivePeaks" element={<FivePeaks />} />
-        <Route path="/secciones/FiveVip" element={<FiveVip />} />
-        <Route path="/secciones/Italianos" element={<Italianos />} />
-        <Route path="/secciones/ItalianosFlush" element={<ItalianosFlush />} />
-        <Route path="/secciones/Discapacitados" element={<Discapacitados />} />
-        <Route path="/secciones/BlustarEvento" element={<BlustarEvento />} />
-        <Route path="/secciones/BlustarObra" element={<BlustarObra />} />
-        <Route path="/secciones/Armal" element={<Armal />} />
-        <Route path="/secciones/Fibra" element={<Fibra />} />
-        <Route path="/secciones/Lavamanos" element={<Lavamanos />} />
+        <Route path="/secciones/fivePeaks" element={<FivePeaks />} />
+        <Route path="/secciones/fiveVip" element={<FiveVip />} />
+        <Route path="/secciones/italianos" element={<Italianos />} />
+        <Route path="/secciones/italianosFlush" element={<ItalianosFlush />} />
+        <Route path="/secciones/discapacitados" element={<Discapacitados />} />
+        <Route path="/secciones/blustarevento" element={<BlustarEvento />} />
+        <Route path="/secciones/blustarobra" element={<BlustarObra />} />
+        <Route path="/secciones/armal" element={<Armal />} />
+        <Route path="/secciones/fibra" element={<Fibra />} />
+        <Route path="/secciones/lavamanos" element={<Lavamanos />} />
 
       </Routes>
     </div>

@@ -15,6 +15,9 @@ const Contratos = () => {
         <li>
           <Link to="/contratos/pendientes">Visualizar</Link>
         </li>
+        <li>
+          <Link to="/contratos/finalizados">Contratos Finalizados</Link>
+        </li>
       </ul>
     </div>
   );
