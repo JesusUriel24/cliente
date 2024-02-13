@@ -1,6 +1,6 @@
 // cliente/src/components/Inventario.js
 import React, { useEffect, useState } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, useNavigate } from 'react-router-dom';
 //import FormularioProducto from './FormularioProducto';
 import FivePeaks from './secciones/FivePeaks';  
 import FiveVip from './secciones/FiveVip'; 
@@ -20,18 +20,20 @@ const Inventario = () => {
   const [productsPerPage] = useState(5);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const navigate = useNavigate();
 
  // const handlePageChange = page => {
    // setCurrentPage(page);
   //};
-
+;
   //const handleSearch = term => {
     //setSearchTerm(term);
   //};
 
-  const handleCategoryChange = category => {
+  const handleCategoryChange = (category,to) => {
     setSelectedCategory(category);
     setCurrentPage(1);
+    navigate(to);
   };
 
   useEffect(() => {
@@ -46,38 +48,36 @@ const Inventario = () => {
         {/* ... (código existente) */}
       </div>
       <div className="category-buttons">
-        <Link to ="/secciones/FivePeaks">
-        <button className="button" onClick={() => handleCategoryChange('FivePeaks')}>Five Peaks</button>
-        </Link>
-        <Link to="/secciones/FiveVip">
-          <button className="button" onClick={() => handleCategoryChange('FiveVip')}>Five VIP</button>
-        </Link>
-        <Link to="/secciones/Italianos">
-          <button className="button" onClick={() => handleCategoryChange('Italianos')}>Italianos</button>
-        </Link>
-        <Link to="/secciones/ItalianosFlush">
-          <button className="button" onClick={() => handleCategoryChange('ItalianosFlush')}>ItalianosFlush</button>
-        </Link>
-        <Link to="/secciones/Discapacitados">
-          <button className="button" onClick={() => handleCategoryChange('Discapacitados')}>Discapacitados</button>
-          </Link>
-          <Link to="/secciones/BlustarEvento">
-            <button className="button" onClick={() => handleCategoryChange('BlustarEvento')}>BlustarEvento</button>
-          </Link>
-          <Link to="/secciones/BlustarObra">
-            <button className="button" onClick={() => handleCategoryChange('BlustarObra')}>BlustarObra</button>
-          </Link>
-          <Link to="/secciones/Armal">
-            <button className="button" onAuxClick={() => handleCategoryChange('Armal')}>Armal</button>
-          </Link>
-          <Link to="/secciones/Fibra">
-            <button className="button" onAuxClick={() => handleCategoryChange('Fibra')}>Fibra</button>
-          </Link>
-          <Link to="/secciones/Lavamanos">
-            <button className="button" onAuxClick={() => handleCategoryChange('Lavamanos')}>Lavamanos</button>
-          </Link>
-
-
+        {/*<Link to ="/secciones/FivePeaks">*/}
+        <button className="button" onClick={() => handleCategoryChange('FivePeaks','/secciones/FivePeaks')}>Five Peaks</button>
+        {/*</Link>*/}
+        {/*<Link to="/secciones/FiveVip">*/}
+          <button className="button" onClick={() => handleCategoryChange('FiveVip','/secciones/FiveVip')}>Five VIP</button>
+        {/*</Link>*/}
+        {/*<Link to="/secciones/Italianos">*/}
+          <button className="button" onClick={() => handleCategoryChange('Italianos','/secciones/Italianos')}>Italianos</button>
+        {/*</Link>*/}
+        {/*<Link to="/secciones/ItalianosFlush">*/}
+          <button className="button" onClick={() => handleCategoryChange('ItalianosFlush','/secciones/ItalianosFlush')}>ItalianosFlush</button>
+        {/*</Link>*/}
+        {/*<Link to="/secciones/Discapacitados">*/}
+          <button className="button" onClick={() => handleCategoryChange('Discapacitados','/secciones/Discapacitados')}>Discapacitados</button>
+          {/*</Link>*/}
+          {/*<Link to="/secciones/BlustarEvento">*/}
+            <button className="button" onClick={() => handleCategoryChange('BlustarEvento','/secciones/BlustarEvento')}>BlustarEvento</button>
+          {/*</Link>*/}
+          {/*<Link to="/secciones/BlustarObra">*/}
+            <button className="button" onClick={() => handleCategoryChange('BlustarObra','/secciones/BlustarObra')}>BlustarObra</button>
+          {/*</Link>*/}
+          {/*<Link to="/secciones/Armal">*/}
+            <button className="button" onClick={() => handleCategoryChange('Armal','/secciones/Armal')}>Armal</button>
+          {/*</Link>*/}
+          {/*<Link to="/secciones/Fibra">*/}
+            <button className="button" onClick={() => handleCategoryChange('Fibra','/secciones/Fibra')}>Fibra</button>
+          {/*</Link>*/}
+          {/*<Link to="/secciones/Lavamanos">*/}
+            <button className="button" onClick={() => handleCategoryChange('Lavamanos','/secciones/Lavamanos')}>Lavamanos</button>
+          {/* </Link> */}
       </div>
 
       <Routes>

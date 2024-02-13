@@ -1,30 +1,14 @@
-// src/components/secciones/FivePeaks.js (y otros archivos de secciones similares)
+// cliente/src/components/FivePeaks.js
 import React from 'react';
 
-const fivepeaks = ({ nombre, colores }) => {
+const FivePeaks= () => {
   return (
     <div>
-      <h1>{nombre}</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Color</th>
-            <th>Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          {colores.map((color, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{color.nombre}</td>
-              <td>{color.descripcion}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <h2>Five Vip Page</h2>
+      
+      {/* Contenido específico para la página Five Peaks */}
     </div>
   );
 };
 
-export default fivepeaks;
+export default FivePeaks;
