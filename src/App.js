@@ -13,6 +13,7 @@ import Italianos from './components/secciones/Italianos';
 import ItalianosFlush from './components/secciones/ItalianosFlush';
 import Lavamanos from './components/secciones/Lavamanos';
 import Discapacitados from './components/secciones/Discapacitados';
+import Armal from './components/secciones/Armal';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/secciones/Italianos" element={<Italianos />} />
           <Route path="/secciones/ItalianosFlush" element={<ItalianosFlush />} />
           <Route path="/secciones/Lavamanos" element={<Lavamanos />} />
+          <Route path="/secciones/Armal" element={<Armal />} />
         </Routes>
       </div>
     </Router>

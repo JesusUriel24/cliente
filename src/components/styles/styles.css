@@ -48,3 +48,52 @@
 .botones-header a:hover {
   color: gray; /* Cambia el color del texto al pasar el ratón por encima */
 }
+
+/* cliente/src/styles/styles.css */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* cliente/src/components/secciones/FivePeaks.css */
+.table-container {
+  margin-top: 20px;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.table-container th {
+  background-color: #f2f2f2;
+}
+
+.table-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-container tr:hover {
+  background-color: #ddd;
+}
+
+.color-cell {
+  font-weight: bold;
+}
+
