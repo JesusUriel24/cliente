@@ -1,5 +1,4 @@
-// cliente/src/components/secciones/FivePeaks.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
 
 const FivePeaks = () => {
@@ -14,6 +13,14 @@ const FivePeaks = () => {
     { color: 'Rojo', cantidad: 25, style: { backgroundColor: '#F52413' } },
     { color: 'Blanco', cantidad: 30, style: { backgroundColor: 'white' } },
   ]);
+
+  const [total, setTotal] = useState(0);
+
+  // Calcula la suma total de las cantidades cuando cambia el estado de datosTabla
+  useEffect(() => {
+    const sumaTotal = datosTabla.reduce((total, fila) => total + fila.cantidad, 0);
+    setTotal(sumaTotal);
+  }, [datosTabla]);
 
   const handleCantidadChange = (index, newValue) => {
     const nuevaTabla = [...datosTabla];
@@ -47,6 +54,7 @@ const FivePeaks = () => {
           ))}
         </tbody>
       </table>
+      <p>Total: {total}</p>
     </div>
   );
 };
