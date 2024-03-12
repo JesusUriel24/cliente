@@ -97,3 +97,36 @@ tr:nth-child(even) {
   font-weight: bold;
 }
 
+/* Estilos para el componente de inicio */
+.inicio-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+}
+
+.inicio-container .imagen-container {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.inicio-container .imagen-container img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inicio-container .texto-container {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.inicio-container .texto-container h1 {
+  font-size: 32px;
+  color: #333;
+}
+
+.inicio-container .texto-container p {
+  font-size: 18px;
+  color: #666;
+}
