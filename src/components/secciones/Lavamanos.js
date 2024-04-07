@@ -4,8 +4,8 @@ import '../styles/styles.css';
 const Lavamanos = () => {
   // Datos de ejemplo para la tabla
   const [datosTabla, setDatosTabla] = useState([
-    { color: 'Lavamanos Doble', cantidad: 10, style: { backgroundColor: '#ED7FE8' } },
-    { color: 'Lavamanos Acero Inoxidable', cantidad: 15, style: { backgroundColor: '#65E041' } },
+    { color: 'Lavamanos Doble', cantidad: 10, style: { backgroundColor: '#AEA8A8' } },
+    { color: 'Lavamanos Acero Inoxidable', cantidad: 15, style: { backgroundColor: '#939090' } },
   ]);
 
   // Estado para almacenar el total

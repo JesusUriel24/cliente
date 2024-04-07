@@ -11,8 +11,8 @@ const Inicio = () => {
         <img src={imagen1} alt="Imagen 1" />
       </div>
       <div className="texto-container">
-        <h1>Bienvenido a nuestra aplicación</h1>
-        <p>Explora nuestras funcionalidades y descubre todo lo que podemos ofrecerte.</p>
+        <h1>Bienvenido a SaniMovil de Tlaxcala</h1>
+        <p>En SANIMÓVIL DE TLAXCALA usted encontrará servicio y atención en la renta de sanitarios móviles para eventos. Dentro de nuestros productos en renta podemos ofrecerle sanitarios de diferentes tipos, tales como: V.I.P., de obra, para personas con capacidades diferentes, lavamanos, regaderas y módulos para gel alcohol y sanitizante.</p>
       </div>
       <div className="imagen-container">
       <img src={imagen2} alt="Imagen 2" />

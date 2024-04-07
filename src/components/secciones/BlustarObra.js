@@ -5,8 +5,8 @@ import '../styles/styles.css';
 const BlustarObra = () => {
   // Datos de ejemplo para la tabla
   const [datosTabla, setDatosTabla] = useState([
-    { color: 'Blustar Estandar Obra', cantidad: 10, style: { backgroundColor: '#ED7FE8' } },
-    { color: 'Blustar Ejecutivos Obra', cantidad: 15, style: { backgroundColor: '#65E041' } },
+    { color: 'Blustar Estandar Obra', cantidad: 10, style: { backgroundColor: '#EF2312' } },
+    { color: 'Blustar Ejecutivos Obra', cantidad: 15, style: { backgroundColor: '#EF2312' } },
   ]);
 
   const [total, setTotal] = useState(0);
