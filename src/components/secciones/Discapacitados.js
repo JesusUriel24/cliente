@@ -1,25 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import grisImage from '../assets/gris.png'; // Importa la imagen para el color Gris
+import azulImage from '../assets/azul.png';
+import rojoImage from '../assets/rojo.png'; // Importa la imagen para el color Azul
+import cafeImage from '../assets/cafe.png';
 import '../styles/styles.css';
 
 const Discapacitados = () => {
-  // Datos de ejemplo para la tabla
-  const [datosTabla, setDatosTabla] = useState([
-
-    { color: 'Gris', cantidad: 8, style: { backgroundColor: '#A6A8AA' } },
-
+  const [piezas, setPiezas] = useState([
+    { color: 'Gris', cantidad: 0 },
+    { color: 'Azul', cantidad: 0 },
+    { color: 'Rojo', cantidad: 0 },
+    { color: 'Cafe', cantidad: 0 },
+    // Puedes agregar más colores aquí si es necesario
   ]);
 
-  const [total, setTotal] = useState(0);
-  
-  useEffect(() => {
-    const sumaTotal = datosTabla.reduce((total, fila) => total + fila.cantidad, 0);
-    setTotal(sumaTotal);
-  }, [datosTabla]);
+  const handleAddPiece = (index) => {
+    const nuevasPiezas = [...piezas];
+    nuevasPiezas[index].cantidad += 1;
+    setPiezas(nuevasPiezas);
+  };
 
-  const handleCantidadChange = (index, newValue) => {
-    const nuevaTabla = [...datosTabla];
-    nuevaTabla[index].cantidad = newValue;
-    setDatosTabla(nuevaTabla);
+  const handleRemovePiece = (index) => {
+    const nuevasPiezas = [...piezas];
+    if (nuevasPiezas[index].cantidad > 0) {
+      nuevasPiezas[index].cantidad -= 1;
+      setPiezas(nuevasPiezas);
+    }
   };
 
   return (
@@ -30,25 +36,27 @@ const Discapacitados = () => {
           <tr>
             <th>Color</th>
             <th>Cantidad</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {datosTabla.map((fila, index) => (
+          {piezas.map((pieza, index) => (
             <tr key={index}>
-              <td className="color-cell" style={fila.style}>{fila.color}</td>
+              <td className="color-cell">
+                {pieza.color === 'Gris' && <img src={grisImage} alt={pieza.color} style={{ width: '50px', height: '50px' }} />}
+                {pieza.color === 'Azul' && <img src={azulImage} alt={pieza.color} style={{ width: '50px', height: '50px' }} />}
+                {pieza.color === 'Rojo' && <img src={rojoImage} alt={pieza.color} style={{ width: '50px', height: '50px' }} />}
+                {pieza.color === 'Cafe' && <img src={cafeImage} alt={pieza.color} style={{ width: '50px', height: '50px' }} />}
+              </td>
+              <td>{pieza.cantidad}</td>
               <td>
-                <input
-                  type="number"
-                  value={fila.cantidad}
-                  onChange={(e) => handleCantidadChange(index, parseInt(e.target.value))}
-                  min="0"
-                />
+                <button onClick={() => handleAddPiece(index)}>Agregar</button>
+                <button onClick={() => handleRemovePiece(index)}>Eliminar</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <p>Total: {total}</p>
     </div>
   );
 };
